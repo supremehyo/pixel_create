@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Kade/AndroidStudioProjects/pixel_create-main/app/src/main/res/drawable/list_selector.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/Kade/AndroidStudioProjects/pixel_create-main/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Kade/AndroidStudioProjects/pixel_create-main/app/src/main/res/layout/bit_list_item.xml" value="0.33" />
+        <entry key="..\:/Users/Kade/AndroidStudioProjects/pixel_create-main/app/src/main/res/layout/singer_item.xml" value="0.2765625" />
+        <entry key="..\:/Users/Kade/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/activity_list_item.xml" value="0.3619791666666667" />
         <entry key="..\:/androidProject/PixelArtConverter-master/app/src/main/res/drawable/ic_baseline_collections_24.xml" value="0.3177083333333333" />
         <entry key="..\:/androidProject/PixelArtConverter-master/app/src/main/res/drawable/ic_baseline_play_circle_filled_24.xml" value="0.2671794871794872" />
         <entry key="..\:/androidProject/PixelArtConverter-master/app/src/main/res/drawable/ic_twotone_collections_24.xml" value="0.2713541666666667" />
@@ -13,5 +18,5 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

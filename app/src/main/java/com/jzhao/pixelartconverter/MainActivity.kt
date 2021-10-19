@@ -8,6 +8,7 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.StateListDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -59,7 +60,8 @@ class MainActivity : AppCompatActivity() {
     var with =0
     var height =0
     var wiasdf = 0
-
+    var gridtext_w = 0
+    var gridtext_h = 0
     private val colorImageListViewModel: ColorImageListViewModel by lazy {
         ViewModelProvider(this).get(ColorImageListViewModel::class.java)
     }
@@ -164,7 +166,8 @@ class MainActivity : AppCompatActivity() {
 
         val pixelWidth = floor((original.width / horiPixelCount.toDouble())).toInt()
         val pixelHeight = floor((original.height / vertiPixelCount.toDouble())).toInt()
-
+        gridtext_w = pixelWidth
+        gridtext_h = pixelHeight
         var pixelArt = Bitmap.createBitmap(pixelWidth * horiPixelCount, pixelHeight * vertiPixelCount, Bitmap.Config.ARGB_8888, true)
         pixelArt.eraseColor(Color.WHITE)
         // createPaletteAsync(pixelArt)
@@ -250,7 +253,8 @@ class MainActivity : AppCompatActivity() {
             i++
         }
 
-        setbitGridRecyclerView(bitArray,with) // 색계산 다 끝나고 with가 정해지고 나서 그리드를 만든다.
+        setbitGridRecyclerView(bitArray,horiPixelCount, gridtext_w , gridtext_h) // 색계산 다 끝나고 with가 정해지고 나서 그리드를 만든다.
+        Log.v("sdfsdfsdbs" , horiPixelCount.toString())
         var savedImageURI = saveImage(pixelArt, "PixelArt_${UUID.randomUUID()}")
         imageView2.setImageURI(savedImageURI)
         imageView2.visibility = View.VISIBLE
@@ -289,11 +293,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun setbitGridRecyclerView(list : ArrayList<String> , with : Int){
-        bitgrid_recyclerView.layoutManager = GridLayoutManager(this , height)
-        bitgrid_recyclerView.addItemDecoration(GridSpaceItemDecoration(wiasdf,0,false))
-        gridBitAdapter = GridBitAdapter(list)
+    fun setbitGridRecyclerView(list : ArrayList<String> , with : Int , w :Int , h: Int){
+        bitgrid_recyclerView.numColumns = with
+      //  bitgrid_recyclerView.setSelector(StateListDrawable())
+        gridBitAdapter = GridBitAdapter(applicationContext, list , w ,h)
         bitgrid_recyclerView.adapter = gridBitAdapter
+
     }
 
     private fun setColorImageRecycleView() {
@@ -414,9 +419,6 @@ private fun updateUI() {
                 num = i
             }
         }
-        Log.v("sdfsdfsdf" , num.toString())
-
-
         return num
     }
 }
