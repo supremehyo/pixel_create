@@ -1,2 +1,7 @@
 # PixelArtConverter
-Android app that converts a given image to pixel art of specified size
+#### 이미지를 픽셀 아트이미지로 변경하는 앱입니다. 
+#### 이미지에 가장 많은 색 5개를 뽑아내서 팔레트를 만들어줍니다.
+#### 비슷한 색을 가진 픽셀들을 같은 숫자로 묶어줍니다.
+#### 픽셀 아트로 만들어진 이미지 파일을 저장합니다.  
+#### 팔레트와 매치되는 색의 숫자를 누르면 그 색으로 칠해집니다. (미구현)
+
